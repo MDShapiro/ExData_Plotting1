@@ -6,3 +6,5 @@ observations<-read.csv.sql("/Users/Michael/Desktop/household_power_consumption.t
 observations$Date<-as.Date(observations$Date, "%d/%m/%Y")
 observations$Time<-strptime(observations$Time, "%H:%M:%S")
 hist(observations$Global_active_power, main="Global Active Power", xlab = "Global Active Power (kilowatts)", col="red")
+dev.copy(png, file="plot1.png") ## Create the PNG
+dev.off()
